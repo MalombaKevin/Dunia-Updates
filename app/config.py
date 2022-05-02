@@ -2,7 +2,7 @@ from distutils.debug import DEBUG
 
 
 class Config :
-    pass
+    NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
 
 class ProdConfig(Config):
     pass
