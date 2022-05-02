@@ -26,9 +26,10 @@ def process_results(news_list):
     for news_item in news_list:
         name =news_item.get('name')
         url = news_item.get('url')
+        description = news_item.get('description')
 
         if name:
-            news_object = News_Sources(name, url)
+            news_object = News_Sources(name, url, description)
             news_results.append(news_object)
 
     return news_results
