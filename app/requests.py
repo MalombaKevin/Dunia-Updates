@@ -7,7 +7,7 @@ def get_news():
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
+    get_news_url = 'https://newsapi.org/v2/top-headlines/sources?language=en&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
@@ -25,9 +25,10 @@ def process_results(news_list):
     news_results = []
     for news_item in news_list:
         name =news_item.get('name')
+        url = news_item.get('url')
 
         if name:
-            news_object = News_Sources(name)
+            news_object = News_Sources(name, url)
             news_results.append(news_object)
 
     return news_results

@@ -8,5 +8,12 @@
 </head>
 <body>
     <marquee behavior="alternate">Welcome To DuniaUpdates</marquee>
+{% for source in news_sources %}
+
+ <span style="text-align:right; font-size:X-large"> &nbsp;&nbsp;<a href="{{source.url}}">{{source.name}}</a></span>&nbsp;
+ {% endfor %}
+ <hr>
+
+
 </body>
 </html>
