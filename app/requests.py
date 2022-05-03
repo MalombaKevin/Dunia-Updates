@@ -38,7 +38,7 @@ def process_results(news_list):
 News_Articles = news.News_Article
 def get_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -57,13 +57,13 @@ def process_articles(articles_list):
     for article_item in articles_list:
         title = article_item.get('title')
         description = article_item.get('description')
-        publishedAT = article_item.get('publishedAT')
+        publishedAt = article_item.get('publishedAt')
         author = article_item.get('author')
         urlToImage = article_item.get('urlToImage')
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAT, author, urlToImage, url)
+            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result

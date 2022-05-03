@@ -9,11 +9,11 @@ class News_Source:
 
 class News_Article:
 
-    def __init__(self,title, description, publishedAT, author, urlToImage, url):
+    def __init__(self,title, description, publishedAt, author, urlToImage, url):
 
         self.title = title
         self.description = description
-        self.publishedAT = publishedAT
+        self.publishedAt = publishedAt
         self.author = author
         self.urlToImage = urlToImage
         self.url = url
