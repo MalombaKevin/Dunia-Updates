@@ -43,7 +43,7 @@ def process_results(news_list):
 News_Articles = news.News_Article
 def get_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=general&language=en&apiKey={}'.format(api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=general&language=en&pageSize=10&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -75,7 +75,7 @@ def process_articles(articles_list):
 
 def get_health_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=health&language=en&apiKey={}'.format(api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=health&pageSize=5&language=en&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -107,7 +107,7 @@ def process_articles(articles_list):
 
 def get_sports_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=sports&language=en&apiKey={}'.format(api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=5&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -139,7 +139,7 @@ def process_articles(articles_list):
 
 def get_technology_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey={}'.format(api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=5&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -172,7 +172,7 @@ def process_articles(articles_list):
 
 def get_entertainment_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=entertainment&language=en&apiKey={}'.format(api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=entertainment&language=en&pageSize=5&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -204,7 +204,7 @@ def process_articles(articles_list):
 
 def get_business_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=business&language=en&apiKey={}'.format(api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=business&language=en&pageSize=5&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
