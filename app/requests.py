@@ -1,14 +1,19 @@
+from email.mime import base
 from app import app
 import urllib.request,json
 from .models import news
 
 News_Sources= news.News_Source
 
+api_key = app.config['NEWS_API_KEY']
+base_url = app.config['NEWS_API_BASE_URL']
+
+ 
 def get_news():
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = 'https://newsapi.org/v2/top-headlines/sources?language=en&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
+    get_news_url = base_url.format(api_key)
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
@@ -38,7 +43,136 @@ def process_results(news_list):
 News_Articles = news.News_Article
 def get_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=90&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=general&language=en&apiKey={}'.format(api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        articles_result = None
+
+        if get_articles_response['articles']:
+            articles_result_list = get_articles_response['articles']
+            articles_result = process_articles(articles_result_list)
+
+# title, description, name,  publishedAT, author, urlToImage, url
+    return articles_result
+
+def process_articles(articles_list):
+    articles_result = []
+    for article_item in articles_list:
+        title = article_item.get('title')
+        description = article_item.get('description')
+        publishedAt = article_item.get('publishedAt')
+        author = article_item.get('author')
+        urlToImage = article_item.get('urlToImage')
+        url = article_item.get('url')
+
+        if title:
+            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_result.append(articles_object)
+
+    return articles_result
+
+def get_health_articles():
+
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=health&language=en&apiKey={}'.format(api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        articles_result = None
+
+        if get_articles_response['articles']:
+            articles_result_list = get_articles_response['articles']
+            articles_result = process_articles(articles_result_list)
+
+# title, description, name,  publishedAT, author, urlToImage, url
+    return articles_result
+
+def process_articles(articles_list):
+    articles_result = []
+    for article_item in articles_list:
+        title = article_item.get('title')
+        description = article_item.get('description')
+        publishedAt = article_item.get('publishedAt')
+        author = article_item.get('author')
+        urlToImage = article_item.get('urlToImage')
+        url = article_item.get('url')
+
+        if title:
+            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_result.append(articles_object)
+
+    return articles_result
+
+# def get_sports_articles():
+
+#     get_articles_url = 'https://newsapi.org/v2/top-headlines?category=sports&language=en&apiKey={}'.format(api_key)
+#     with urllib.request.urlopen(get_articles_url) as url:
+#         get_articles_data = url.read()
+#         get_articles_response = json.loads(get_articles_data)
+
+#         articles_result = None
+
+#         if get_articles_response['articles']:
+#             articles_result_list = get_articles_response['articles']
+#             articles_result = process_articles(articles_result_list)
+
+# # title, description, name,  publishedAT, author, urlToImage, url
+#     return articles_result
+
+# def process_articles(articles_list):
+#     articles_result = []
+#     for article_item in articles_list:
+#         title = article_item.get('title')
+#         description = article_item.get('description')
+#         publishedAt = article_item.get('publishedAt')
+#         author = article_item.get('author')
+#         urlToImage = article_item.get('urlToImage')
+#         url = article_item.get('url')
+
+#         if title:
+#             articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+#             articles_result.append(articles_object)
+
+#     return articles_result
+
+# def get_technology_articles():
+
+#     get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey={}'.format(api_key)
+#     with urllib.request.urlopen(get_articles_url) as url:
+#         get_articles_data = url.read()
+#         get_articles_response = json.loads(get_articles_data)
+
+#         articles_result = None
+
+#         if get_articles_response['articles']:
+#             articles_result_list = get_articles_response['articles']
+#             articles_result = process_articles(articles_result_list)
+
+# # title, description, name,  publishedAT, author, urlToImage, url
+#     return articles_result
+
+# def process_articles(articles_list):
+#     articles_result = []
+#     for article_item in articles_list:
+#         title = article_item.get('title')
+#         description = article_item.get('description')
+#         publishedAt = article_item.get('publishedAt')
+#         author = article_item.get('author')
+#         urlToImage = article_item.get('urlToImage')
+#         url = article_item.get('url')
+
+#         if title:
+#             articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+#             articles_result.append(articles_object)
+
+#     return articles_result
+
+
+def get_entertainment_articles():
+
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=entertainment&language=en&apiKey={}'.format(api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)

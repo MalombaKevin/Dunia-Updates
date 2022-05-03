@@ -37,33 +37,36 @@
     {% endfor %}
     <hr>
 
-    <span>
-      <!-- title, description, publishedAT, author, urlToImage, url -->
-      <div class="container">
-        <span style="font-weight: 900; font-family:fantasy">DUNIA UPDATES : Technology</span><br><br>
-        {% for article in news_articles %}
 
-        <div class='col-6'>
-          <div class='card' align="center">
-            <p class="card-header">{{article.title}}</p>
-            <span class="flex-card">
-              <img src="{{article.urlToImage}}" style="width:50%;">
-              <div>
-              <span style="color:blue; font-weight:600"> Description</span>  <p>{{article.description}}</p>
-              <span style="color:blue; font-weight:600">Published By</span>  <p>{{article.author}}</p>
-              <span style="color:blue; font-weight:600"> Published On</span>  <p>{{article.publishedAt}}</p>
+    <!-- title, description, publishedAT, author, urlToImage, url -->
+    <div class="container">
+      <span style="font-weight: 900; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: large;">DUNIA UPDATES LIVE</span><br><br>
+      {% for article in news_articles %}
 
-              </div>
-            </span>
-            <div class="card-footer">
-              <a href="{{article.url}}" target="_blank">Read Full Story</a>
+      <div class='col-6'>
+        <div class='card' align="center">
+          <p class="card-header"><span style="color:blue"> <a href="{{article.url}}" style="text-decoration:none" target="_blank">Headline</a></span>: {{article.title}}</p>
+          <span class="flex-card">
+            <img src="{{article.urlToImage}}" style="width:50%;" alt="image not found">
+            <div>
+              <span style="color:blue; font-weight:600"> Description</span>
+              <p>{{article.description}}</p>
+              <span style="color:blue; font-weight:600">Published By</span>
+              <p>{{article.author}}</p>
+              <span style="color:blue; font-weight:600"> Published On</span>
+              <p>{{article.publishedAt}}</p>
+
             </div>
+          </span>
+          <div class="card-footer">
+            <a href="{{article.url}}" target="_blank">Read Full Story</a>
           </div>
+        </div>
 
-        </div><br>
-        {% endfor %}
+      </div><br>
+      {% endfor %}
 
-      </div>
+    </div>
 
   </div>
 
