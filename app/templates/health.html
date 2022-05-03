@@ -11,24 +11,30 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">DUNIA UPDATES</a>
+        <a class="navbar-brand" href="/"><span style="font-weight:900">DUNIA<span style="color:chartreuse">UPDATES</span></span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/">HOME <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/tech">TECHNOLOGY  <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/biz">BUSINESS<span class="sr-only"></span></a>
+            <a class="nav-item nav-link active" href="/health">HEALTH <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/sports">SPORTS</a> <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/enta">ENTERTAINMENT</a> <span class="sr-only"></span></a>
+            
           </div>
         </div>
       </nav><br>
     <div class="container" align="center">
-        <span style="font-weight: 900; font-family:fantasy;font-size: large;">DUNIA UPDATES : HEALTH NEWS</span><br><br>
+        <span style="font-weight: 900; font-family:fantasy;font-size: large;">LATEST TOP HEALTH NEWS</span><br><br>
         {% for article in news_articles %}
   
         <div class='col-6'>
           <div class='card' align="center">
-            <p class="card-header">{{article.title}}</p>
+            <p class="card-header"><span style="color:blue"> <a href="{{article.url}}" style="text-decoration:none" target="_blank">Headline</a></span>: {{article.title}}</p>
             <span class="flex-card">
               <img src="{{article.urlToImage}}" style="width:50%;" alt="image not found">
               <div>
@@ -42,7 +48,7 @@
               </div>
             </span>
             <div class="card-footer">
-              <a href="{{article.url}}" target="_blank">Read Full Story</a>
+              <a href="{{article.url}}" target="_blank" style="text-decoration:none">Full Story</a>
             </div>
           </div>
   
