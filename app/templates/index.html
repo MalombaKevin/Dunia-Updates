@@ -36,9 +36,11 @@
     <hr>
 
     <span>
+      
       {% for article in news_articles %}
-  <span><img src="{{article.urlToImage}}"></span>
+  <span>{{article.title}}</span>
       {% endfor %}
+      
       
     </span>
   </div>
