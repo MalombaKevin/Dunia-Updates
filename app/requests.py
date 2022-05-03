@@ -38,7 +38,7 @@ def process_results(news_list):
 News_Articles = news.News_Article
 def get_articles():
 
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=90&apiKey=8bcc39f4104646c09fdd3c037f85a7ca'
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
