@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/home/moringa/Documents/moringa-core/python/IP/IP2/Dunia-Updates/env_news"
+setenv VIRTUAL_ENV "/home/moringa/Desktop/Dunia-Updates/env_news"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

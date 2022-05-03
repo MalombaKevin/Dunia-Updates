@@ -1,12 +1,13 @@
-from email.mime import base
-from app import app
 import urllib.request,json
-from .models import news
+from .models import News_Source, News_Article
 
-News_Sources= news.News_Source
+api_key = None
+base_url = None
 
-api_key = app.config['NEWS_API_KEY']
-base_url = app.config['NEWS_API_BASE_URL']
+def configure_request(app):
+    global api_key, base_url 
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
 
  
 def get_news():
@@ -35,12 +36,12 @@ def process_results(news_list):
         description = news_item.get('description')
 
         if name:
-            news_object = News_Sources(name, url, description)
+            news_object = News_Source(name, url, description)
             news_results.append(news_object)
 
     return news_results
 
-News_Articles = news.News_Article
+
 def get_articles():
 
     get_articles_url = 'https://newsapi.org/v2/top-headlines?category=general&language=en&pageSize=10&apiKey={}'.format(api_key)
@@ -68,7 +69,7 @@ def process_articles(articles_list):
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_object = News_Article(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result
@@ -100,7 +101,7 @@ def process_articles(articles_list):
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_object = News_Article(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result
@@ -132,7 +133,7 @@ def process_articles(articles_list):
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_object = News_Article(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result
@@ -164,7 +165,7 @@ def process_articles(articles_list):
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_object = News_Article(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result
@@ -197,7 +198,7 @@ def process_articles(articles_list):
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_object = News_Article(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result
@@ -229,7 +230,7 @@ def process_articles(articles_list):
         url = article_item.get('url')
 
         if title:
-            articles_object = News_Articles(title, description, publishedAt, author, urlToImage, url)
+            articles_object = News_Article(title, description, publishedAt, author, urlToImage, url)
             articles_result.append(articles_object)
 
     return articles_result

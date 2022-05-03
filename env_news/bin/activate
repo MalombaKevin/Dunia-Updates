@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/moringa/Documents/moringa-core/python/IP/IP2/Dunia-Updates/env_news"
+VIRTUAL_ENV="/home/moringa/Desktop/Dunia-Updates/env_news"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

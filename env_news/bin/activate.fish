@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/moringa/Documents/moringa-core/python/IP/IP2/Dunia-Updates/env_news"
+set -gx VIRTUAL_ENV "/home/moringa/Desktop/Dunia-Updates/env_news"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
