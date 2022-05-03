@@ -7,6 +7,14 @@ class News_Source:
         self.description = description
     
 
-# class News_Article:
+class News_Article:
 
-#     def __init__(self, )
+    def __init__(self,title, description, name,  publishedAT, author, urlToImage, url):
+
+        self.title = title
+        self.description = description
+        self.name = name
+        self.publishedAT = publishedAT
+        self.author = author
+        self.urlToImage = urlToImage
+        self.url = url
