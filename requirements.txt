@@ -1,15 +1,9 @@
-argcomplete==2.0.0
-asgiref==3.5.1
-backports.zoneinfo==0.2.1
 click==7.1.2
-Django==4.0.4
-django-cors-headers==3.11.0
 Flask==1.1.4
 Flask-Script==2.0.6
 importlib-metadata==4.11.3
 itsdangerous==1.1.0
 Jinja2==2.11.3
-MarkupSafe==2.0.0
-sqlparse==0.4.2
+MarkupSafe==2.0.1
 Werkzeug==1.0.1
 zipp==3.8.0
