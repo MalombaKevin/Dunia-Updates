@@ -5,7 +5,7 @@
 
 
 -------
-
+<img src="">
 ## Table of Content
 
 + [Description](#description)
@@ -15,11 +15,11 @@
 + [Authors Info](#Authors-Info)
 
 ### Repofinder site link
-+ [www.duniaupdates.com]()
++ [www.duniaupdates.com](https://dunia-updates.herokuapp.com/)
 
 
 ## Description
-+ Dunia-updates(duniapp) is a web application that gathers the latest information from top mainstream media companies and have them all on one place. Whether it's news from United States of America or United States of Africa; Whether it's the latest discovery in space or the latest transfers by Arsenal FC: Get the latest news by visiting [www.duniaupdates.com](). A user can search for their topic of interest and get to enjoy all the news on the same. Dunia-updates: Keeping the world updated
++ Dunia-updates(duniapp) is a web application that gathers the latest information from top mainstream media companies and have them all on one place. Whether it's news from United States of America or United States of Africa; Whether it's the latest discovery in space or the latest transfers by Arsenal FC: Get the latest news by visiting [www.duniaupdates.com](https://dunia-updates.herokuapp.com/). A user can search for their topic of interest and get to enjoy all the news on the same. Dunia-updates: Keeping the world updated
 
 ## Access
 
